@@ -1,0 +1,82 @@
+# secrets
+.env
+
+# python
+.venv/
+__pycache__/
+*.py[cod]
+server/.cache/
+server/debug/
+camera/captures/
+archive/camera/captures/
+
+# node / next
+node_modules/
+.next/
+out/
+
+# platformio
+.pio/
+.vscode/.browse.c_cpp.db*
+.vscode/ipch/
+
+# archived first implementation (keeps its own venv out of git)
+archive/**/.venv/
+
+# os
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ESP32 Wi-Fi credentials
+archive/firmware-wifi-kiosk/include/secrets.h
+
+# camera node Wi-Fi credentials
+# (also the old path: a local secrets.h left there by earlier checkouts)
+camera/campus_mithra_cam/secrets.h*
+archive/camera/campus_mithra_cam/secrets.h*
+!archive/camera/campus_mithra_cam/secrets.h.example
+
+# ---------------------------------------------------------------------------
+# Campus platform (firebase/, apps/)
+# ---------------------------------------------------------------------------
+# Local env files. Only the .env.example files are committed.
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+# Firebase: per-developer project selection, emulator logs and exports
+.firebaserc
+*-debug.log
+firebase/emulator-data/
+# Service-account keys and other credentials: never commit
+*serviceAccount*.json
+*service-account*.json
+*-firebase-adminsdk-*.json
+*.p8
+*.p12
+*.pem
+*.keystore
+*.jks
+key.properties
+# Flutter / Dart
+.dart_tool/
+apps/student_mobile/build/
+.flutter-plugins
+.flutter-plugins-dependencies
+# Next.js
+apps/campus_web/.next/
+apps/campus_web/next-env.d.ts
+*.tsbuildinfo
+apps/campus_web/.next-e2e/
+apps/campus_web/e2e/artifacts/
+
+# Google Maps key for the iOS app (copy Secrets.xcconfig.example)
+apps/student_mobile/ios/Flutter/Secrets.xcconfig
+
+# PlatformIO run outside Windows: platformio.ini's C:/ paths become folders here
+firmware/C:/
+
+# Local backups of live Firestore data taken before scripted edits
+firebase/backups/
